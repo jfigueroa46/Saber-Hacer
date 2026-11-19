@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portafolio: agua potable y razonamiento cuantitativo desde el MUN</title>
+<meta name="description" content="Portafolio virtual del proyecto de razonamiento cuantitativo sobre el acceso al agua potable, trabajado desde la dinámica de un Modelo de Naciones Unidas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232a78d6'/%3E%3Cpath d='M16 6c4 5.5 7 9 7 12.5a7 7 0 0 1-14 0C9 15 12 11.5 16 6z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!--
+  PARA PERSONALIZAR ANTES DE SUBIR:
+  1. Busca "Colombia" y pon el país que te tocó (portada, resolución y pie de página).
+  2. Para el video de la presentación, edita VIDEO_URL al inicio de app.js.
+  3. Si cambias el informe, reemplaza informe_MUN_agua_potable.docx con el mismo nombre.
+-->
+</head>
+<body>
+<div class="progreso" id="progreso" aria-hidden="true"></div>
+
+<div class="estructura">
+  <nav class="regla" aria-label="Secciones del portafolio">
+    <p class="titulo-regla">Portafolio del proyecto MUN</p>
+    <div class="pista" id="pista"><span class="nivel" aria-hidden="true"></span>
+    <ul id="lista-regla">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#metas">Metas</a></li>
+      <li><a href="#problema">Problema</a></li>
+      <li><a href="#preguntas">Preguntas orientadoras</a></li>
+      <li><a href="#procesos">Procesos y productos</a></li>
+      <li><a href="#analisis">Análisis</a></li>
+      <li><a href="#resolucion">Resolución</a></li>
+      <li><a href="#conclusiones">Conclusiones</a></li>
+      <li><a href="#presentacion">Presentación</a></li>
+      <li><a href="#referencias">Referencias</a></li>
+    </ul></div>
+  </nav>
+
+  <main class="contenido">
+
+    <!-- ===== Portada ===== -->
+    <header class="portada" id="inicio">
+      <div>
+        <h1>De cada 100 personas, 26 no tienen agua potable segura</h1>
+        <p class="bajada">Portafolio del proyecto <em>Aplicación del razonamiento cuantitativo a problemáticas globales desde la dinámica del Modelo de Naciones Unidas (MUN)</em>. Analizo el acceso al agua con números, gráficas y probabilidad, y lo llevo a una resolución diplomática.</p>
+        <div class="autores">
+          <span>Juan Figueroa Bermúdez</span>
+          <span>Delegado de Colombia</span>
+          <span>Saber Hacer (Do It), noviembre de 2026</span>
+        </div>
+        <div class="acciones">
+          <a class="boton" href="#metas">Ver el portafolio</a>
+          <a class="boton claro" href="informe_MUN_agua_potable.docx" download>Descargar el informe (Word)</a>
+        </div>
+      </div>
+
+      <div class="cien" id="cien">
+        <ul class="rejilla" id="rejilla" aria-hidden="true"></ul>
+        <p class="lectura" id="cien-lectura" aria-live="polite">74 de 100 en 2024</p>
+        <p class="detalle" id="cien-detalle">Cada cuadro representa a 1 de cada 100 personas del mundo. Cifras redondeadas de OMS y UNICEF (2025).</p>
+        <div class="leyenda" aria-hidden="true"><span class="l-ok">Con agua gestionada de forma segura</span><span class="l-falta">Sin ella</span></div>
+        <div class="controles" role="group" aria-label="Escenarios hasta 2030">
+          <button type="button" data-cien="actual" aria-pressed="false">Ritmo actual hasta 2030</button>
+          <button type="button" data-cien="meta" aria-pressed="false">Ritmo que exige la meta</button>
+          <button type="button" data-cien="inicio" aria-pressed="true">Volver a 2024</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Metas ===== -->
+    <section class="parte" id="metas" aria-labelledby="t-metas">
+      <h2 id="t-metas">Metas</h2>
+      <p>Me puse una meta por cada eje del pensamiento matemático que pide el proyecto, y una cuarta que las junta en la resolución.</p>
+      <ol>
+        <li>Analizar con indicadores numéricos cuántas personas no tienen agua potable gestionada de forma segura, cómo se reparten por nivel de servicio y qué tan rápido está cambiando la cobertura.</li>
+        <li>Representar con gráficas la tendencia de la cobertura y resolver un problema geométrico real: dimensionar una cisterna de captación de lluvia para una vivienda.</li>
+        <li>Medir con probabilidad y escenarios qué tan incierto es llegar a la meta de 2030 y qué cambiaría con un ritmo de avance distinto.</li>
+        <li>Convertir esos resultados en una propuesta de resolución al estilo MUN, con medidas viables y justas para países de realidades distintas.</li>
+      </ol>
+    </section>
+
+    <!-- ===== Problema ===== -->
+    <section class="parte" id="problema" aria-labelledby="t-problema">
+      <h2 id="t-problema">Planteamiento del problema</h2>
+      <p class="enunciado">¿Qué ritmo de avance necesita la cobertura mundial de agua potable segura para cumplir la meta de 2030, y cómo debería repartirse el esfuerzo para que llegue primero a quienes más lo necesitan?</p>
+      <p>La meta de los Objetivos de Desarrollo Sostenible es que en 2030 todas las personas tengan agua potable segura. Entre 2015 y 2024 la cobertura mundial subió de 68 % a 74 % y 961 millones de personas ganaron acceso, pero todavía quedan 2.100 millones sin él, incluidos 106 millones que beben de fuentes superficiales sin tratar (OMS y UNICEF, 2025).</p>
+      <p>El promedio esconde diferencias grandes. En los países menos adelantados la probabilidad de carecer de agua y saneamiento básicos es más del doble que en el resto, y en los contextos frágiles la cobertura es 38 puntos porcentuales (pp) menor. En el campo la cobertura pasó de 50 % a 60 % entre 2015 y 2024, mientras que en las ciudades se estancó (UNICEF, 2025).</p>
+      <p>Las variables que puedo medir son la cobertura (%), el número de personas sin servicio, el ritmo de avance (pp por año), la brecha rural frente al promedio mundial y el volumen de agua por persona (litros por día).</p>
+
+      <div class="envoltura">
+      <table class="tabla">
+        <caption>Indicadores principales</caption>
+        <thead><tr><th scope="col">Indicador</th><th scope="col" class="num">Valor</th><th scope="col">Fuente</th></tr></thead>
+        <tbody>
+          <tr><td>Población mundial (2024)</td><td class="num">8.200 millones</td><td>OMS y UNICEF (2025)</td></tr>
+          <tr><td>Cobertura de agua gestionada de forma segura (2015 y 2024)</td><td class="num">68 % y 74 %</td><td>OMS y UNICEF (2025)</td></tr>
+          <tr><td>Personas sin agua gestionada de forma segura (2024)</td><td class="num">2.100 millones</td><td>OMS y UNICEF (2025)</td></tr>
+          <tr><td>Personas que ganaron acceso entre 2015 y 2024</td><td class="num">961 millones</td><td>OMS y UNICEF (2025)</td></tr>
+          <tr><td>Reducción de personas sin acceso desde 2015</td><td class="num">270 millones</td><td>OMS y UNICEF (2025)</td></tr>
+          <tr><td>Cobertura rural (2015 y 2024)</td><td class="num">50 % y 60 %</td><td>UNICEF (2025)</td></tr>
+          <tr><td>Cobertura en contextos frágiles frente al resto</td><td class="num">38 pp menos</td><td>UNICEF (2025)</td></tr>
+          <tr><td>Personas en países con estrés hídrico</td><td class="num">Más de 2.000 millones</td><td>ONU-Agua (2025b)</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="nota-pie">pp = puntos porcentuales.</p>
+    </section>
+
+    <!-- ===== Preguntas ===== -->
+    <section class="parte" id="preguntas" aria-labelledby="t-preguntas">
+      <h2 id="t-preguntas">Preguntas orientadoras</h2>
+      <p>Organicé las preguntas según el eje que ayuda a responderlas.</p>
+      <h3>Eje numérico</h3>
+      <ol>
+        <li>¿Qué indicadores muestran mejor el tamaño del problema: el porcentaje de cobertura, el número de personas sin servicio o el ritmo anual de avance?</li>
+        <li>¿Qué parte de quienes no tienen agua segura ya usa un servicio básico y qué parte depende de fuentes superficiales?</li>
+      </ol>
+      <h3>Eje geométrico</h3>
+      <ol start="3">
+        <li>¿Cómo se ven las tendencias de la cobertura en una gráfica y qué pendiente exige la meta de 2030?</li>
+        <li>¿Qué dimensiones debería tener una cisterna de captación de lluvia para cubrir las necesidades de una vivienda?</li>
+      </ol>
+      <h3>Eje aleatorio</h3>
+      <ol start="5">
+        <li>Si elijo personas al azar en el mundo, ¿qué probabilidad hay de que varias de ellas no tengan agua segura?</li>
+        <li>¿Qué tan seguro puedo estar de las cifras y de las proyecciones, si los propios informes las revisan de una edición a otra?</li>
+      </ol>
+      <h3>Resolución</h3>
+      <ol start="7">
+        <li>¿Qué compromisos concretos y medibles podrían aprobar países con realidades tan distintas?</li>
+      </ol>
+    </section>
+
+    <!-- ===== Procesos ===== -->
+    <section class="parte" id="procesos" aria-labelledby="t-procesos">
+      <h2 id="t-procesos">Procesos y productos</h2>
+      <p>Trabajé en cinco semanas, siguiendo el calendario del curso. Los datos salen de informes de la OMS, UNICEF, ONU-Agua y la UNESCO, y los pasé a tablas para calcular con ellos. Los cálculos y las gráficas los hice con Python. Para las proyecciones usé un modelo lineal, que supone un ritmo de avance constante.</p>
+      <div class="envoltura">
+      <table class="tabla">
+        <caption>Fases del trabajo y evidencias del portafolio</caption>
+        <thead><tr><th scope="col">Semana</th><th scope="col">Qué se hace</th><th scope="col">Evidencia</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Definir metas, problema y preguntas orientadoras; confirmar el país asignado</td><td>Metas, problema y país asignado (secciones de arriba)</td></tr>
+          <tr><td>2</td><td>Buscar y organizar los datos en tablas</td><td>Tabla de indicadores con sus fuentes</td></tr>
+          <tr><td>3</td><td>Análisis numérico, geométrico y aleatorio</td><td>Cálculos, gráficas, cisterna y calculadoras</td></tr>
+          <tr><td>4</td><td>Redactar el informe y la resolución; entregar el portafolio</td><td>Informe en Word y borrador de resolución</td></tr>
+          <tr><td>5</td><td>Presentación en la simulación MUN</td><td>Presentación y registro de la sesión</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h3>Productos</h3>
+      <ul>
+        <li>Informe analítico en Word, con normas APA: <a href="informe_MUN_agua_potable.docx" download>descargar el informe</a>.</li>
+        <li>Propuesta de resolución diplomática, en la sección Resolución de esta página.</li>
+        <li>Este portafolio virtual, que se entrega al terminar la semana 4.</li>
+        <li>Presentación oral en la sesión plenaria de la semana 5.</li>
+      </ul>
+    </section>
+
+    <!-- ===== Análisis ===== -->
+    <section class="parte" id="analisis" aria-labelledby="t-analisis">
+      <h2 id="t-analisis">Análisis cuantitativo</h2>
+      <p>Cada eje responde a una de las preguntas orientadoras. Los cálculos van paso a paso y hay tres calculadoras para cambiar los supuestos y ver qué pasa.</p>
+
+      <h3>Eje numérico: niveles de servicio y ritmo de avance</h3>
+      <p>Para saber cuánto pesa cada grupo, divido sus personas entre la población mundial de 2024 (8.200 millones).</p>
+      <div class="formula">Porcentaje = personas del grupo ÷ población mundial × 100</div>
+      <div class="formula">Servicio básico: 1.400 ÷ 8.200 × 100 ≈ 17,1 %</div>
+      <p style="margin-top:14px">Con el mismo procedimiento, el servicio limitado (287 millones) pesa 3,5 %, las fuentes no mejoradas (302 millones) 3,7 % y el agua superficial (106 millones) 1,3 %. Los cuatro grupos suman 2.095 millones, que redondeados son los 2.100 millones del informe (OMS y UNICEF, 2025).</p>
+
+      <figure class="figura">
+        <div class="marco"><img src="img/fig-niveles.png" width="1280" height="560" alt="Gráfico de barras: 1.400 millones de personas sin agua segura usan servicio básico, 287 millones servicio limitado, 302 millones fuentes no mejoradas y 106 millones agua superficial."></div>
+        <figcaption><strong>Figura 1.</strong> Personas sin agua gestionada de forma segura según nivel de servicio, 2024. Elaboración propia con datos de OMS y UNICEF (2025).</figcaption>
+      </figure>
+
+      <p>Dos de cada tres personas sin agua segura (1.400 ÷ 2.095 ≈ 66,8 %) ya tienen un servicio básico. Para ellas el paso pendiente parece ser mejorar la calidad y la disponibilidad de lo que ya existe, más que empezar desde cero.</p>
+
+      <p>El ritmo de avance es el cambio en la cobertura dividido entre los años transcurridos.</p>
+      <div class="formula">Ritmo 2015-2024 = (74 − 68) ÷ (2024 − 2015) = 6 ÷ 9 ≈ 0,67 pp/año</div>
+      <div class="formula">Cobertura 2000 ≈ 3.800 ÷ 6.200 × 100 ≈ 61,3 %</div>
+      <div class="formula">Ritmo 2000-2015 = (68 − 61,3) ÷ 15 ≈ 0,45 pp/año</div>
+      <p style="margin-top:14px">El valor de 2000 es un cálculo mío y aproximado, hecho con cifras redondeadas del informe. Aun así, el avance se aceleró: 0,67 ÷ 0,45 ≈ 1,5 veces.</p>
+      <p>Para llegar a 100 % en 2030 faltan 26 pp en 6 años:</p>
+      <div class="formula">Ritmo requerido = (100 − 74) ÷ (2030 − 2024) = 26 ÷ 6 ≈ 4,33 pp/año</div>
+      <div class="formula">4,33 ÷ 0,67 ≈ 6,5 veces el ritmo de 2015-2024</div>
+      <p style="margin-top:14px">Con el ritmo actual, el 100 % tardaría 26 ÷ 0,67 ≈ 39 años, es decir, hacia 2063. Medido en personas el panorama es más duro: desde 2015 la cantidad de personas sin agua segura bajó 270 millones, unos 30 millones por año, y para llegar a cero en 2030 tendría que bajar 350 millones por año (2.100 ÷ 6), 11,7 veces más. Las razones 6,5 y 11,7 no coinciden porque la población sigue creciendo y parte del esfuerzo se va en dar servicio a quienes nacen cada año.</p>
+      <p>En el campo el ritmo fue mayor que el promedio: (60 − 50) ÷ 9 ≈ 1,11 pp/año. La diferencia con el promedio mundial bajó de 18 pp en 2015 a 14 pp en 2024, pero con ese ritmo la cobertura rural llegaría a 66,7 % en 2030, todavía por debajo del promedio mundial de hoy.</p>
+
+      <h3>Eje geométrico: pendientes y una cisterna</h3>
+      <p>En una recta, la pendiente es el ritmo de avance. La del tramo 2015-2024 (0,67) es más empinada que la de 2000-2015 (0,45), y la recta que llega a 100 % en 2030 tiene una pendiente de 4,33. La distancia vertical entre esa recta y la del ritmo actual en 2030 es la brecha que quedaría: 100 − 78 = 22 pp.</p>
+
+      <figure class="figura">
+        <div class="marco"><img src="img/fig-tendencia.png" width="1280" height="720" alt="Gráfico de líneas de la cobertura de agua segura: 61 % en 2000, 68 % en 2015 y 74 % en 2024, con proyecciones a 2030 de 76,7 %, 78 %, 83 % y 100 % según el ritmo de avance."></div>
+        <figcaption><strong>Figura 2.</strong> Cobertura de agua gestionada de forma segura y proyecciones lineales a 2030. Elaboración propia con datos de OMS y UNICEF (2025); el valor de 2000 es un cálculo aproximado propio.</figcaption>
+      </figure>
+
+      <div class="calculadora" id="calc-ritmo">
+        <h4>Calculadora de ritmo</h4>
+        <p class="ayuda">Mueve el ritmo de avance y mira dónde estaría la cobertura en 2030.</p>
+        <div class="calc-grid">
+          <div>
+            <div class="campo">
+              <label for="r-ritmo">Ritmo de avance <output id="r-ritmo-v">0,67 pp/año</output></label>
+              <input type="range" id="r-ritmo" min="0.3" max="5" step="0.01" value="0.67">
+            </div>
+            <div class="salidas">
+              <div class="salida"><span>Cobertura en 2030</span><strong id="r-cob">78,0 %</strong></div>
+              <div class="salida"><span>Año en que llegaría a 100 %</span><strong id="r-anio">2063</strong></div>
+              <div class="salida"><span>Frente al ritmo actual (0,67)</span><strong id="r-veces">1,0 veces</strong></div>
+              <div class="salida" id="r-aviso-caja" hidden><span>Meta de 2030</span><strong id="r-aviso"></strong></div>
+            </div>
+          </div>
+          <svg class="grafica" id="r-grafica" viewBox="0 0 520 260" role="img" aria-label="Gráfica de cobertura observada y proyección según el ritmo elegido"></svg>
+        </div>
+      </div>
+
+      <p>Para llevar la geometría a algo concreto, dimensioné una cisterna para una vivienda de 5 personas. Los datos de lluvia y de techo son supuestos de ejercicio, no de un lugar real: techo de 60 m², lluvia de 1.200 mm al año y coeficiente de aprovechamiento de 0,8 (la fracción del agua que realmente se capta). En cuanto al consumo, 20 litros por persona al día es un mínimo y se recomienda llegar a entre 50 y 100 litros (Oficina del Alto Comisionado de las Naciones Unidas para los Derechos Humanos [ACNUDH], s. f.).</p>
+      <p>Un milímetro de lluvia sobre un metro cuadrado equivale a un litro, así que el volumen captado al año es el área por la lluvia por el coeficiente.</p>
+      <div class="formula">V = A × P × C = 60 m² × 1,2 m × 0,8 = 57,6 m³/año</div>
+      <div class="formula">D(20 L) = 5 × 20 × 365 = 36.500 L = 36,5 m³/año</div>
+      <div class="formula">D(50 L) = 5 × 50 × 365 = 91.250 L = 91,25 m³/año</div>
+      <div class="formula">Área necesaria: A = D ÷ (P × C) → 36,5 ÷ 0,96 ≈ 38 m² (20 L) y 91,25 ÷ 0,96 ≈ 95 m² (50 L)</div>
+      <div class="formula">Tanque cilíndrico: V = π r<sup>2</sup> h → h = 3 ÷ (π × 0,7<sup>2</sup>) ≈ 1,95 m</div>
+      <p style="margin-top:14px">Un techo de tamaño común alcanza para el mínimo de 20 litros, pero con 50 litros apenas cubre 63 % de la demanda. Una advertencia: el cálculo dice cuánta agua se capta, no que sea potable. El agua de lluvia necesita tratamiento y verificación para contar como agua gestionada de forma segura (OMS y UNICEF, 2025).</p>
+
+      <div class="calculadora" id="calc-cisterna">
+        <h4>Calculadora de cisterna</h4>
+        <p class="ayuda">Cambia los supuestos y revisa si el techo alcanza. Los valores iniciales son los del informe.</p>
+        <div class="calc-grid">
+          <div>
+            <div class="campo"><label for="c-personas">Personas en la vivienda <output id="c-personas-v"></output></label><input type="range" id="c-personas" min="1" max="20" step="1" value="5"></div>
+            <div class="campo"><label for="c-litros">Consumo por persona al día <output id="c-litros-v"></output></label><input type="range" id="c-litros" min="20" max="100" step="5" value="20"></div>
+            <div class="campo"><label for="c-area">Área del techo <output id="c-area-v"></output></label><input type="range" id="c-area" min="10" max="200" step="5" value="60"></div>
+            <div class="campo"><label for="c-lluvia">Lluvia anual <output id="c-lluvia-v"></output></label><input type="range" id="c-lluvia" min="200" max="3000" step="50" value="1200"></div>
+            <div class="campo"><label for="c-coef">Coeficiente de aprovechamiento <output id="c-coef-v"></output></label><input type="range" id="c-coef" min="0.5" max="0.95" step="0.05" value="0.8"></div>
+            <div class="campo"><label for="c-dias">Días de reserva <output id="c-dias-v"></output></label><input type="range" id="c-dias" min="7" max="90" step="1" value="30"></div>
+            <div class="campo"><label for="c-radio">Radio del tanque <output id="c-radio-v"></output></label><input type="range" id="c-radio" min="0.4" max="1.5" step="0.05" value="0.7"></div>
+          </div>
+          <div class="salidas" aria-live="polite">
+            <div class="salida"><span>Agua captada al año</span><strong id="c-cap"></strong></div>
+            <div class="salida"><span>Demanda anual de la vivienda</span><strong id="c-dem"></strong></div>
+            <div class="salida"><span>Parte de la demanda que cubre el techo</span><strong id="c-cob"></strong></div>
+            <div class="salida"><span>Área de techo necesaria</span><strong id="c-areanec"></strong></div>
+            <div class="salida"><span>Volumen del tanque para los días de reserva</span><strong id="c-tanque"></strong></div>
+            <div class="salida"><span>Altura del cilindro con ese radio</span><strong id="c-altura"></strong></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Eje aleatorio: probabilidad e incertidumbre</h3>
+      <p>La proporción de personas sin agua gestionada de forma segura es p = 2.100 ÷ 8.200 ≈ 0,256. Si elijo 10 personas al azar en el mundo y supongo que son independientes entre sí, el número X de personas sin agua segura sigue una distribución binomial, X ~ B(10; 0,256).</p>
+      <div class="formula">P(X = k) = C(10, k) × p<sup>k</sup> × (1 − p)<sup>10 − k</sup></div>
+      <div class="formula">E(X) = 10 × 0,256 ≈ 2,56</div>
+      <div class="formula">σ = √(10 × 0,256 × 0,744) ≈ 1,38</div>
+      <div class="formula">P(X = 2) = 45 × 0,256<sup>2</sup> × 0,744<sup>8</sup> ≈ 0,277</div>
+      <div class="formula">P(X = 0) = 0,744<sup>10</sup> ≈ 0,052 → P(X ≥ 1) ≈ 0,948</div>
+      <p style="margin-top:14px">En un grupo de 10 personas cualquiera, casi seguro habrá alguien sin agua segura (94,8 %), y la mitad de las veces habrá tres o más (P(X ≥ 3) ≈ 0,492).</p>
+
+      <figure class="figura">
+        <div class="marco"><img src="img/fig-binomial.png" width="1280" height="640" alt="Gráfico de barras de la distribución binomial: 5,2 % para cero personas sin agua segura, 18 % para una, 27,7 % para dos, 25,4 % para tres, 15,2 % para cuatro, 6,3 % para cinco, 1,8 % para seis y 0,4 % para siete."></div>
+        <figcaption><strong>Figura 3.</strong> Probabilidad del número de personas sin agua segura en un grupo de 10. Las barras naranjas marcan de 3 personas en adelante, que suman 49,2 %. Elaboración propia.</figcaption>
+      </figure>
+
+      <div class="calculadora" id="calc-binomial">
+        <h4>Calculadora binomial</h4>
+        <p class="ayuda">Elige cuántas personas hay en el grupo y qué proporción carece de agua segura.</p>
+        <div class="calc-grid">
+          <div>
+            <div class="campo"><label for="b-n">Personas en el grupo <output id="b-n-v"></output></label><input type="range" id="b-n" min="1" max="50" step="1" value="10"></div>
+            <div class="campo"><label for="b-p">Proporción sin agua segura <output id="b-p-v"></output></label><input type="range" id="b-p" min="1" max="60" step="0.1" value="25.6"></div>
+          </div>
+          <div class="salidas" aria-live="polite">
+            <div class="salida"><span>Personas esperadas sin agua segura, E(X)</span><strong id="b-e"></strong></div>
+            <div class="salida"><span>Desviación estándar</span><strong id="b-s"></strong></div>
+            <div class="salida"><span>Probabilidad de que ninguna carezca de ella</span><strong id="b-p0"></strong></div>
+            <div class="salida"><span>Probabilidad de que al menos una carezca</span><strong id="b-p1"></strong></div>
+            <div class="salida"><span>Probabilidad de que tres o más carezcan</span><strong id="b-p3"></strong></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Las cifras también tienen un margen de error. La edición anterior del informe estimaba 2.200 millones de personas sin agua segura y 115 millones con agua superficial (ONU-Agua, 2025a), y la de 2025 baja esos valores a 2.100 y 106 millones (OMS y UNICEF, 2025). Eso es una diferencia de 4,5 % y de 7,8 %. Si aplico ±4,5 % a los 2.100 millones, la cobertura de 2024 quedaría entre 73,2 % y 75,6 %. No es un intervalo de confianza formal, porque las ediciones también cambian el año de referencia, pero da una idea del orden de magnitud.</p>
+
+      <div class="envoltura">
+      <table class="tabla">
+        <caption>Escenarios de cobertura en 2030 (cobertura 2030 = 74 + 6 × ritmo)</caption>
+        <thead><tr><th scope="col">Escenario</th><th scope="col" class="num">Ritmo (pp/año)</th><th scope="col" class="num">Cobertura 2030</th><th scope="col" class="num">Llegaría a 100 %</th></tr></thead>
+        <tbody>
+          <tr><td>Ritmo de 2000-2015</td><td class="num">0,45</td><td class="num">76,7 %</td><td class="num">Hacia 2082</td></tr>
+          <tr><td>Ritmo de 2015-2024 (actual)</td><td class="num">0,67</td><td class="num">78,0 %</td><td class="num">Hacia 2063</td></tr>
+          <tr><td>Ritmo propuesto en la resolución</td><td class="num">1,50</td><td class="num">83,0 %</td><td class="num">Hacia 2041</td></tr>
+          <tr><td>Ritmo que exige la meta</td><td class="num">4,33</td><td class="num">100 %</td><td class="num">2030</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:14px">Los dos escenarios basados en datos pasados difieren en solo 1,3 pp en 2030, mientras que la distancia que queda hasta la meta es de más de 20 pp. La incertidumbre de las cifras es pequeña frente a la brecha y no cambia la conclusión: con los ritmos observados, la meta de 2030 no se cumple.</p>
+    </section>
+
+    <!-- ===== Resolución ===== -->
+    <section class="parte" id="resolucion" aria-labelledby="t-resolucion">
+      <h2 id="t-resolucion">Propuesta de resolución diplomática</h2>
+      <p>La elaboré para la simulación y no es un documento oficial de las Naciones Unidas. Sigue el formato habitual de un MUN, con cláusulas preambulares y operativas.</p>
+      <div class="resolucion">
+        <div class="cabecera">
+          <p><strong>Órgano:</strong> Asamblea General de las Naciones Unidas, Segunda Comisión (Asuntos Económicos y Financieros)</p>
+          <p><strong>Tema:</strong> Acceso al agua potable gestionada de forma segura y cumplimiento de la meta de 2030</p>
+          <p><strong>Delegación proponente:</strong> Colombia</p>
+        </div>
+        <p class="lead">La Asamblea General,</p>
+        <ul class="pre">
+          <li><em>Preocupada</em> porque 2.100 millones de personas siguen sin agua potable gestionada de forma segura (OMS y UNICEF, 2025);</li>
+          <li><em>Observando</em> que la cobertura mundial pasó de 68 % a 74 % entre 2015 y 2024, a un ritmo promedio de 0,67 pp por año;</li>
+          <li><em>Reconociendo</em> que alcanzar la cobertura universal en 2030 exigiría 4,33 pp por año, cerca de 6,5 veces el ritmo actual;</li>
+          <li><em>Alarmada</em> porque en los contextos frágiles la cobertura es 38 pp menor y porque en los países menos adelantados la probabilidad de carecer de agua y saneamiento básicos es más del doble (UNICEF, 2025);</li>
+          <li><em>Consciente</em> de que la cobertura rural subió de 50 % a 60 % mientras que la urbana se estancó (UNICEF, 2025);</li>
+        </ul>
+        <ol>
+          <li><em>Reafirma</em> la meta de acceso universal al agua potable segura en 2030 y reconoce que, con el ritmo actual, la cobertura mundial llegaría a cerca de 78 %;</li>
+          <li><em>Establece</em> como meta intermedia más que duplicar el ritmo de avance, de 0,67 a 1,5 pp por año, lo que llevaría la cobertura a 83 % en 2030;</li>
+          <li><em>Exhorta</em> a los países donantes a dirigir una mayor proporción de la cooperación a los países menos adelantados y a los contextos frágiles;</li>
+          <li><em>Recomienda</em> que los Estados con cobertura urbana estancada revisen la calidad y la continuidad del servicio, ya que 66,8 % de quienes carecen de agua segura ya cuenta con un servicio básico que mejorar;</li>
+          <li><em>Invita</em> a las autoridades locales a evaluar la captación de agua de lluvia como complemento, con tratamiento y verificación de la calidad, y a dimensionar las obras con la relación V = A × P × C;</li>
+          <li><em>Insta</em> a que los planes nacionales consideren la presión sobre las fuentes, pues la agricultura concentra 72 % de las extracciones de agua dulce y la demanda podría crecer entre 20 % y 30 % hacia 2050 (ONU-Agua, 2025b);</li>
+          <li><em>Solicita</em> al Programa Conjunto de Monitoreo de la OMS y UNICEF que presente cada año estimaciones con rangos de incertidumbre, desagregadas por zona rural y urbana y por tipo de país;</li>
+          <li><em>Decide</em> revisar el avance en su próxima sesión con cuatro indicadores: cobertura (%), ritmo (pp por año), personas sin servicio y brecha rural frente al promedio mundial.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Conclusiones ===== -->
+    <section class="parte" id="conclusiones" aria-labelledby="t-conclusiones">
+      <h2 id="t-conclusiones">Conclusiones</h2>
+      <p>El resultado que más pesa es la comparación de ritmos. La cobertura sube, pero a 0,67 pp por año cuando la meta de 2030 pide 4,33. Ninguno de los escenarios basados en datos pasados se acerca a cerrar esa distancia, y la incertidumbre de las cifras es mucho menor que lo que falta. Por eso la resolución no promete llegar al 100 % en 2030: propone más que duplicar el ritmo y concentrar el esfuerzo donde la brecha es mayor, en los países menos adelantados, los contextos frágiles y las zonas rurales.</p>
+      <p>Hay límites que conviene decir. La proyección es lineal y el avance real puede acelerarse o frenarse por la financiación, los conflictos o el clima. El valor de 2000 es un cálculo aproximado mío, y los datos de lluvia y de techo de la cisterna son supuestos de ejercicio, no medidas de un lugar concreto. Además, usé un solo indicador, el agua en los hogares, y dejé por fuera el saneamiento y la higiene, que avanzan junto con ella.</p>
+      <p>Una lección del ejercicio es que un mismo dato admite varias lecturas. Medido como porcentaje, como ritmo o como número de personas, el avance se ve distinto (6,5 veces frente a 11,7 veces), y en una mesa de negociación cada delegación puede elegir la que más le conviene. Por eso dejé escritos los cálculos paso a paso, para que cualquiera pueda revisarlos y discutir con las mismas cifras.</p>
+    </section>
+
+    <!-- ===== Presentación ===== -->
+    <section class="parte" id="presentacion" aria-labelledby="t-presentacion">
+      <h2 id="t-presentacion">Presentación en la simulación MUN</h2>
+      <p>La propuesta se presenta en la sesión plenaria de la semana 5.</p>
+      <div class="video-espacio" id="video-espacio">
+        <p id="video-texto">El video de la presentación se publicará aquí después de la sesión.</p>
+      </div>
+    </section>
+
+    <!-- ===== Referencias ===== -->
+    <section class="parte referencias" id="referencias" aria-labelledby="t-referencias">
+      <h2 id="t-referencias">Referencias</h2>
+      <p>Dawn. (2025, 22 de marzo). <em>Billions will suffer if rapid glacial melt continues: report</em>. <a href="https://www.dawn.com/news/1899478">https://www.dawn.com/news/1899478</a></p>
+      <p>Fondo de las Naciones Unidas para la Infancia. (2025, 25 de agosto). <em>Fast facts: 1 in 4 people globally still lack access to safe drinking water – WHO, UNICEF</em> [Comunicado de prensa]. <a href="https://www.unicef.org/press-releases/fast-facts-1-4-people-globally-still-lack-access-safe-drinking-water-who-unicef">https://www.unicef.org/press-releases/fast-facts-1-4-people-globally-still-lack-access-safe-drinking-water-who-unicef</a></p>
+      <p>Oficina del Alto Comisionado de las Naciones Unidas para los Derechos Humanos. (s. f.). <em>The right to water</em> (Fact Sheet No. 35). <a href="https://www.ohchr.org/sites/default/files/Documents/Publications/FactSheet35en.pdf">https://www.ohchr.org/sites/default/files/Documents/Publications/FactSheet35en.pdf</a></p>
+      <p>ONU-Agua. (2025a, enero). <em>Water facts</em>. <a href="https://www.unwater.org/sites/default/files/2025-01/UN-Water_Water_Facts_one_pager_January_2025.pdf">https://www.unwater.org/sites/default/files/2025-01/UN-Water_Water_Facts_one_pager_January_2025.pdf</a></p>
+      <p>ONU-Agua. (2025b, septiembre). <em>Water facts</em>. <a href="https://www.developmentaid.org/api/frontend/cms/file/2025/04/UN-Water_Water_Facts_one_pager_September2025.pdf">https://www.developmentaid.org/api/frontend/cms/file/2025/04/UN-Water_Water_Facts_one_pager_September2025.pdf</a></p>
+      <p>Organización Mundial de la Salud y Fondo de las Naciones Unidas para la Infancia. (2025). <em>Progress on household drinking water, sanitation and hygiene 2000–2024: Special focus on inequalities</em>. <a href="https://data.unicef.org/resources/jmp-report-2025/">https://data.unicef.org/resources/jmp-report-2025/</a></p>
+    </section>
+
+    <footer>
+      <p>Portafolio virtual del proyecto <em>Aplicación del razonamiento cuantitativo a problemáticas globales desde la dinámica del Modelo de Naciones Unidas (MUN)</em>.</p>
+      <p>Juan Figueroa Bermúdez, delegado de Colombia. Saber Hacer (Do It), noviembre de 2026.</p>
+    </footer>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
